@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="@color/bg" android:gravity="center" android:orientation="vertical">
+    <ImageView android:layout_width="132dp" android:layout_height="132dp"
+        android:importantForAccessibility="no" android:src="@drawable/logo_splash" />
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:layout_marginTop="12dp" android:text="Video Player" android:textColor="@color/text_primary"
+        android:textSize="26sp" android:textStyle="bold" />
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:text="Offline" android:textColor="@color/orange" android:textSize="30sp" android:textStyle="bold" />
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:layout_marginTop="16dp" android:text="Play Everything\nOffline" android:gravity="center"
+        android:textColor="#6FA8FF" android:textSize="14sp" />
+    <com.google.android.material.progressindicator.CircularProgressIndicator
+        android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:layout_marginTop="32dp" android:indeterminate="true"
+        app:indicatorColor="@color/orange" app:indicatorSize="32dp" app:trackThickness="3dp" />
+</LinearLayout>

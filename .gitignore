@@ -1,0 +1,14 @@
+*.iml
+.gradle
+/local.properties
+# Release signing secrets — never commit these (see app/keystore.properties.example)
+app/keystore.properties
+*.keystore
+*.jks
+/.idea
+.DS_Store
+/build
+/app/build
+/captures
+.externalNativeBuild
+.cxx

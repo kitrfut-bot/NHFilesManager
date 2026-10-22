@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="window_bg">#FF0A0F26</color>
+
+    <color name="bg">#0B0B0B</color>
+    <color name="surface">#151515</color>
+    <color name="card">#1E1E1E</color>
+    <color name="divider">#2A2A2A</color>
+    <color name="text_primary">#FFFFFF</color>
+    <color name="text_secondary">#A0A0A0</color>
+</resources>

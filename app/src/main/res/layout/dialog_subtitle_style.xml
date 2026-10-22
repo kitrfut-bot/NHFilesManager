@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent" android:layout_height="wrap_content"
+    android:orientation="vertical" android:padding="24dp">
+    <TextView android:id="@+id/sizeLabel" android:layout_width="wrap_content"
+        android:layout_height="wrap_content" android:textColor="@color/text_primary" />
+    <com.google.android.material.slider.Slider android:id="@+id/sizeSlider"
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:contentDescription="Subtitle size" android:stepSize="0.25"
+        android:valueFrom="0.5" android:valueTo="2.0" app:thumbColor="@color/orange"
+        app:trackColorActive="@color/orange" />
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:text="Color" android:textColor="@color/text_primary" />
+    <RadioGroup android:id="@+id/colorGroup" android:layout_width="match_parent"
+        android:layout_height="wrap_content" android:orientation="horizontal">
+        <RadioButton android:id="@+id/cWhite" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="White" android:textSize="12sp" />
+        <RadioButton android:id="@+id/cYellow" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Yellow" android:textSize="12sp" />
+        <RadioButton android:id="@+id/cCyan" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Cyan" android:textSize="12sp" />
+        <RadioButton android:id="@+id/cOrange" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Orange" android:textSize="12sp" />
+    </RadioGroup>
+    <TextView android:id="@+id/delayLabel" android:layout_width="wrap_content"
+        android:layout_height="wrap_content" android:layout_marginTop="12dp" android:textColor="@color/text_primary" />
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:gravity="center" android:orientation="horizontal">
+        <Button android:id="@+id/btnMinus" style="@style/Widget.Material3.Button.OutlinedButton"
+            android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="−" />
+        <TextView android:id="@+id/delayValue" android:layout_width="120dp"
+            android:layout_height="wrap_content" android:gravity="center" android:textColor="@color/text_primary"
+            android:textSize="18sp" android:textStyle="bold" />
+        <Button android:id="@+id/btnPlus" style="@style/Widget.Material3.Button.OutlinedButton"
+            android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="+" />
+    </LinearLayout>
+    <TextView android:id="@+id/delayNote" android:layout_width="match_parent"
+        android:layout_height="wrap_content" android:textColor="@color/text_secondary" android:textSize="11sp" />
+</LinearLayout>

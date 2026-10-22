@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/playerRoot" android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="@color/black">
+
+    <FrameLayout android:id="@+id/videoContainer" android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <androidx.media3.ui.PlayerView android:id="@+id/playerView"
+            android:layout_width="match_parent" android:layout_height="match_parent"
+            app:resize_mode="fit" app:show_buffering="never" app:surface_type="surface_view"
+            app:use_controller="false" />
+    </FrameLayout>
+
+    <View android:id="@+id/gestureLayer" android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:contentDescription="Video. Tap to show controls, double tap sides to seek." />
+
+    <FrameLayout android:id="@+id/controlsLayer" android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout android:id="@+id/topBar" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:layout_gravity="top"
+            android:background="@drawable/gradient_top" android:gravity="center_vertical"
+            android:orientation="horizontal" android:paddingHorizontal="16dp" android:paddingVertical="4dp">
+            <ImageButton android:id="@+id/btnBack" style="@style/PlayerIcon"
+                android:contentDescription="Back" android:src="@drawable/ic_back" />
+            <TextView android:id="@+id/tvTitle" android:layout_width="0dp"
+                android:layout_height="wrap_content" android:layout_weight="1" android:ellipsize="end"
+                android:maxLines="1" android:paddingHorizontal="8dp" android:textColor="@color/white"
+                android:textSize="16sp" />
+            <ImageButton android:id="@+id/btnSubtitleTop" style="@style/PlayerIcon"
+                android:contentDescription="Subtitles" android:src="@drawable/ic_subtitle" />
+            <ImageButton android:id="@+id/btnMore" style="@style/PlayerIcon"
+                android:contentDescription="More options" android:src="@drawable/ic_more_vert" />
+        </LinearLayout>
+
+        <LinearLayout android:id="@+id/centerRow" android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:layout_gravity="center"
+            android:gravity="center_vertical" android:orientation="horizontal">
+            <ImageButton android:id="@+id/btnPrev" style="@style/PlayerIcon"
+                android:contentDescription="Previous video" android:src="@drawable/ic_prev" />
+            <TextView android:id="@+id/btnBack30" android:layout_width="48dp" android:layout_height="48dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="Back 30 seconds" android:gravity="center"
+                android:text="−30" android:textColor="@color/white" android:textSize="14sp"
+                android:textStyle="bold" />
+            <FrameLayout android:layout_width="48dp" android:layout_height="48dp">
+                <ImageButton android:id="@+id/btnBack10" style="@style/PlayerIcon"
+                    android:contentDescription="Back 10 seconds" android:src="@drawable/ic_replay" />
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:layout_gravity="center" android:layout_marginTop="2dp" android:text="10"
+                    android:textColor="@color/white" android:textSize="9sp" android:textStyle="bold" />
+            </FrameLayout>
+            <ImageButton android:id="@+id/btnPlayPause" android:layout_width="72dp"
+                android:layout_height="72dp" android:layout_marginHorizontal="16dp"
+                android:background="@drawable/bg_play_circle" android:contentDescription="Play or pause"
+                android:scaleType="center" android:src="@drawable/ic_pause" app:tint="@color/white" />
+            <FrameLayout android:layout_width="48dp" android:layout_height="48dp">
+                <ImageButton android:id="@+id/btnFwd10" style="@style/PlayerIcon"
+                    android:contentDescription="Forward 10 seconds" android:scaleX="-1"
+                    android:src="@drawable/ic_replay" />
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:layout_gravity="center" android:layout_marginTop="2dp" android:text="10"
+                    android:textColor="@color/white" android:textSize="9sp" android:textStyle="bold" />
+            </FrameLayout>
+            <TextView android:id="@+id/btnFwd30" android:layout_width="48dp" android:layout_height="48dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="Forward 30 seconds" android:gravity="center"
+                android:text="+30" android:textColor="@color/white" android:textSize="14sp"
+                android:textStyle="bold" />
+            <ImageButton android:id="@+id/btnNext" style="@style/PlayerIcon"
+                android:contentDescription="Next video" android:src="@drawable/ic_next" />
+        </LinearLayout>
+
+        <LinearLayout android:id="@+id/bottomBar" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:layout_gravity="bottom"
+            android:background="@drawable/gradient_bottom" android:orientation="vertical"
+            android:paddingHorizontal="24dp" android:paddingBottom="8dp" android:paddingTop="16dp">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:gravity="center_vertical" android:orientation="horizontal">
+                <TextView android:id="@+id/tvPosition" android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:text="00:00"
+                    android:textColor="@color/orange" android:textSize="12sp" />
+                <SeekBar android:id="@+id/seekBar" android:layout_width="0dp"
+                    android:layout_height="wrap_content" android:layout_weight="1"
+                    android:contentDescription="Seek bar" android:progressTint="@color/orange"
+                    android:secondaryProgressTint="#66FFFFFF" android:thumbTint="@color/orange" />
+                <TextView android:id="@+id/tvDuration" android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:text="00:00"
+                    android:textColor="@color/white" android:textSize="12sp" />
+            </LinearLayout>
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView android:id="@+id/toolLock" style="@style/ToolButton"
+                    android:drawableTop="@drawable/ic_lock" android:text="Lock" />
+                <TextView android:id="@+id/toolSubtitle" style="@style/ToolButton"
+                    android:drawableTop="@drawable/ic_subtitle" android:text="Subtitle" />
+                <TextView android:id="@+id/toolAudio" style="@style/ToolButton"
+                    android:drawableTop="@drawable/ic_audio" android:text="Audio" />
+                <TextView android:id="@+id/toolSpeed" style="@style/ToolButton"
+                    android:drawableTop="@drawable/ic_speed" android:text="Speed" />
+                <TextView android:id="@+id/toolAspect" style="@style/ToolButton"
+                    android:drawableTop="@drawable/ic_aspect" android:text="Aspect" />
+                <TextView android:id="@+id/toolPip" style="@style/ToolButton"
+                    android:drawableTop="@drawable/ic_pip" android:text="PiP" />
+            </LinearLayout>
+        </LinearLayout>
+    </FrameLayout>
+
+    <TextView android:id="@+id/gestureInfo" android:layout_width="wrap_content"
+        android:layout_height="wrap_content" android:layout_gravity="center"
+        android:background="@drawable/bg_badge" android:paddingHorizontal="20dp"
+        android:paddingVertical="10dp" android:textColor="@color/white" android:textSize="22sp"
+        android:visibility="gone" />
+
+    <ProgressBar android:id="@+id/buffering" android:layout_width="48dp" android:layout_height="48dp"
+        android:layout_gravity="center" android:indeterminateTint="@color/orange" android:visibility="gone" />
+
+    <ImageButton android:id="@+id/btnUnlock" android:layout_width="52dp" android:layout_height="52dp"
+        android:layout_gravity="center_vertical|start" android:layout_marginStart="24dp"
+        android:background="@drawable/bg_play_circle" android:contentDescription="Unlock controls"
+        android:src="@drawable/ic_lock_open" android:visibility="gone" app:tint="@color/white" />
+
+    <LinearLayout android:id="@+id/errorBox" android:layout_width="wrap_content"
+        android:layout_height="wrap_content" android:layout_gravity="center"
+        android:background="@drawable/bg_card" android:gravity="center" android:orientation="vertical"
+        android:padding="20dp" android:visibility="gone">
+        <TextView android:id="@+id/tvError" android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:maxWidth="360dp" android:gravity="center"
+            android:textColor="@color/white" android:textSize="14sp" />
+        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:layout_marginTop="12dp" android:orientation="horizontal">
+            <Button android:id="@+id/btnRetry" android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:text="Retry" />
+            <Button android:id="@+id/btnSkip" style="@style/Widget.Material3.Button.OutlinedButton"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:layout_marginStart="8dp" android:text="Next" />
+            <Button android:id="@+id/btnCloseError" style="@style/Widget.Material3.Button.TextButton"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Close" />
+        </LinearLayout>
+    </LinearLayout>
+</FrameLayout>

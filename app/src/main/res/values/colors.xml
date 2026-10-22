@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="window_bg">#FFE9EFFF</color>
+    <color name="ic_launcher_background">#FF14171B</color>
+
+    <!-- Light theme (default) -->
+    <color name="bg">#F4F5F7</color>
+    <color name="surface">#FFFFFF</color>
+    <color name="card">#EAECEF</color>
+    <color name="divider">#D9DCE1</color>
+    <color name="text_primary">#15161A</color>
+    <color name="text_secondary">#6A6F7A</color>
+    <!-- Constant colors -->
+    <color name="orange">#FF6A00</color>
+    <color name="orange_dark">#CC5500</color>
+    <color name="orange_soft">#33FF6A00</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="scrim">#99000000</color>
+</resources>
